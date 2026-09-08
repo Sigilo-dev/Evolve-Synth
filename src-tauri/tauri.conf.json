@@ -1,0 +1,15 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Evolve Synth",
+  "version": "0.1.0",
+  "identifier": "com.evolvesynth.desktop",
+  "build": { "beforeDevCommand": "npm run dev", "beforeBuildCommand": "npm run build", "devUrl": "http://localhost:1420", "frontendDist": "../dist" },
+  "app": {
+    "windows": [
+      { "label": "main", "title": "Evolve Synth", "width": 620, "height": 500, "visible": false, "resizable": false },
+      { "label": "controller", "title": "Evolve Synth Controller", "url": "index.html", "width": 380, "height": 500, "minWidth": 300, "minHeight": 300, "resizable": true, "alwaysOnTop": true, "visible": true, "decorations": false }
+    ],
+    "security": { "csp": "default-src 'self'; connect-src ipc: http://ipc.localhost" }
+  },
+  "bundle": { "active": true, "resources": ["resources/engine"] }
+}

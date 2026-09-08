@@ -1,0 +1,38 @@
+{
+  "name": "evolve-synth",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build && npm run engine:build",
+    "engine:dev": "tsx engine/index.ts",
+    "engine:build": "tsc -p engine/tsconfig.json",
+    "test": "vitest run",
+    "sidecar:prepare": "npm run engine:build && node scripts/prepare-sidecar.mjs",
+    "tauri": "npm run engine:build && tauri",
+    "demo:build": "npm run sidecar:prepare && tauri build --no-bundle && node scripts/verify-demo-package.mjs"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.9.0",
+    "@tauri-apps/plugin-opener": "^2.5.0",
+    "playwright": "^1.56.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.9.0",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "~5.8.3",
+    "vite": "^7.0.0",
+    "vitest": "^5.0.0"
+  },
+  "optionalDependencies": {
+    "better-sqlite3": "^12.4.1"
+  }
+}

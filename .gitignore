@@ -1,0 +1,27 @@
+# Dependencies and generated output
+node_modules/
+dist/
+engine/dist/
+src-tauri/target/
+src-tauri/gen/
+src-tauri/resources/
+
+# Local application state and diagnostics
+data/
+*.sqlite
+*.sqlite-*
+Diagnostics/
+*.log
+
+# Personal browser/session material and secrets
+.env
+.env.*
+!*.env.example
+cookies/
+Cookies/
+*.pem
+*.key
+
+# Documentation is intentionally not published in this code-only repository
+*.md
+README*
