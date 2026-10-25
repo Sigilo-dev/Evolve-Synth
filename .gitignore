@@ -25,3 +25,6 @@ Cookies/
 # Documentation is intentionally not published in this code-only repository
 *.md
 README*
+
+# Publish the license summary alongside the full LICENSE.
+!/README.md

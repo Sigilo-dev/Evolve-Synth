@@ -2,6 +2,7 @@
 name = "evolve-synth"
 version = "0.1.0"
 description = "Managed browser session for Evolve Synth"
+license-file = "../LICENSE"
 edition = "2021"
 
 [build-dependencies]
